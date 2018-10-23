@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 import { wInfo } from "../utils";
-import { text } from "@storybook/addon-knobs/react";
+import { text, boolean } from "@storybook/addon-knobs/react";
 
 import { Button, Welcome } from "@storybook/react/demo";
 
@@ -24,7 +24,7 @@ storiesOf("Button", module)
     
     `)(() => (
       <Button bg={text("bg", "green", "group1")} onClick={action("clicked")}>
-        Hello Button
+        {text("text", "This is an awesome button")}
       </Button>
     ))
   )
@@ -33,9 +33,13 @@ storiesOf("Button", module)
     wInfo(`
         description of the button
     `)(() => (
-      <Button bg={text("bg", "green", "group1")} onClick={action("clicked")}>
+      <Button
+        bg={text("bg", "green", "group1")}
+        disabled={boolean("disabled", false)}
+        onClick={action("clicked")}
+      >
         <span role="img" aria-label="so cool">
-          😀 😎 👍 💯
+          {text("text", "😀 😎 👍 💯")}
         </span>
       </Button>
     ))

@@ -1,3 +1,7 @@
+# Storybook React Test
+
+![screenshot](screenshot.png)
+
 ## Install dependencies
 
 ### `yarn install`
